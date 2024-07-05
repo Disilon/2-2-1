@@ -1,7 +1,5 @@
 package hiber.model;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 
 @Entity
@@ -22,8 +20,6 @@ public class User {
    private String email;
 
    @OneToOne(mappedBy = "user")
-   //@MapsId("id")
-   //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
    private Car car;
 
    public User() {}
@@ -74,4 +70,5 @@ public class User {
       this.car = car;
       car.setUser(this);
    }
+
 }
